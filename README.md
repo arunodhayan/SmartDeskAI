@@ -1,7 +1,7 @@
 # 🧠 SmartDesk AI  
 ### Your Intelligent Research Assistant for PDFs, Websites, and Scientific Articles  
 
-![SmartDesk AI Banner](https://github.com/arunodhayan/images-readme/raw/main/images-readme/app-descriptiion2.png)
+![SmartDesk AI Banner](https://github.com/arunodhayan/SmartDeskAI/blob/main/images-readme/app-descriptiion2.png)
 
 SmartDesk AI is an **AI-powered summarization and research companion** that allows you to open, read, and interact with scientific papers, PDF reports, and webpages.  
 It is available as both a **desktop application (macOS/Linux)** and a **browser extension**, connecting seamlessly to your **FastAPI backend** or **cloud LLMs** like GPT-4o-mini.
@@ -20,8 +20,8 @@ It is available as both a **desktop application (macOS/Linux)** and a **browser 
 
 ## 💻 Desktop App
 
-![SmartDesk AI Screenshot 1](https://github.com/arunodhayan/images-readme/raw/main/images-readme/app-description.png)
-![SmartDesk AI Screenshot 2](https://github.com/arunodhayan/images-readme/raw/main/images-readme/app_description1.png)
+![SmartDesk AI Screenshot 1](https://github.com/arunodhayan/SmartDeskAI/blob/main/images-readme/app-description.png)
+![SmartDesk AI Screenshot 2](https://github.com/arunodhayan/SmartDeskAI/blob/main/images-readme/app_description1.png)
 
 ### 🧭 How It Works
 1. **Choose Document** — Select or drag a PDF into SmartDesk AI.  
@@ -53,8 +53,8 @@ npm start
 
 ## 🌐 Browser Extension
 
-![SmartDesk AI Extension Screenshot 1](https://github.com/arunodhayan/images-readme/raw/main/images-readme/browser-extension.png)
-![SmartDesk AI Extension Screenshot 2](https://github.com/arunodhayan/images-readme/raw/main/images-readme/browser-extension-1.png)
+![SmartDesk AI Extension Screenshot 1](https://github.com/arunodhayan/SmartDeskAI/blob/main/images-readme/browser-extension.png)
+![SmartDesk AI Extension Screenshot 2](https://github.com/arunodhayan/SmartDeskAI/blob/main/images-readme/browser-extension-1.png)
 
 ### 🔍 Features
 - 📰 **Summarize Webpages Instantly** — Extract abstracts and results from online articles  
