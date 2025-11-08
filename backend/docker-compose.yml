@@ -1,0 +1,73 @@
+version: "3.9"
+
+services:
+  smartdeskai:
+    image: staffaismart:latest
+    container_name: smartdeskai_container
+
+    # Mount current folder inside the container
+    volumes:
+      - .:/src
+      - $HOME/.Xauthority:/root/.Xauthority:rw
+
+    # Expose backend port
+    ports:
+      - "8000:8000"
+
+    # Environment variables (edit directly here 👇)
+    environment:
+      # ----------------------------
+      # Runtime configuration
+      # ----------------------------
+      USE_OFFLINE: "True"
+      MODEL_NAME_OFFLINE: "google/gemma-3n-E2B-it"
+      MODEL_NAME_ONLINE: "gpt-4o-mini"
+
+      # ----------------------------
+      # OpenAI credentials
+      # ----------------------------
+      OPENAI_API_KEY: "sk-your-openai-key-here"
+
+      # ----------------------------
+      # Hugging Face credentials
+      # ----------------------------
+      # --- Hugging Face credentials ---
+      HUGGINGFACE_USERNAME: #add yours
+      HF_TOKEN: #add yours
+      HUGGINGFACE_HUB_CACHE: "/src/"
+      # ----------------------------
+      # Other environment variables
+      # ----------------------------
+      APP_ENV: "development"
+      LOG_LEVEL: "info"
+
+      # ----------------------------
+      # GPU / Display
+      # ----------------------------
+      DISPLAY: "${DISPLAY}"
+      NVIDIA_VISIBLE_DEVICES: "all"
+      NVIDIA_DRIVER_CAPABILITIES: "compute,utility"
+
+    # GPU access reservation
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    # Increase shared memory (important for PyTorch / Chromium)
+    shm_size: 64G
+
+    # Use host network for local connections (optional)
+    network_mode: host
+
+    # Working directory inside the container
+    working_dir: /src
+
+    # Automatically run backend startup script
+    command: ["bash", "mains_backend.sh"]
+
+    # Restart policy (set to "always" for production)
+    restart: "no"

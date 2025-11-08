@@ -1,0 +1,53 @@
+{
+  "name": "smartdesk-ai",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "AI-powered SmartDesk for document summarization and chat",
+  "author": {
+    "name": "Arunodhayan Sampathkumar",
+    "email": "arunodhayan@example.com"
+  },
+  "homepage": "https://github.com/arunodhayan/smartdesk-ai",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^30.5.1",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "axios": "^1.13.2"
+  },
+  "build": {
+    "appId": "com.smartdesk.ai",
+    "productName": "SmartDesk AI",
+    "copyright": "© 2025 Arunodhayan Sampathkumar",
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "package.json"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    }
+  }
+}

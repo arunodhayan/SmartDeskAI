@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "SmartDesk AI",
+  "version": "1.0.0",
+  "description": "Summarize any page, selection, or email with SmartDesk AI — your intelligent assistant.",
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon128.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  // ===============================================================
+  // 🧩 Optional content script for future use
+  // ---------------------------------------------------------------
+  // If you want to re-enable the floating "⚛ Summarize Page" button
+  // on all webpages, simply uncomment the section below and reload
+  // the extension.
+  // ===============================================================
+  /*
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  */
+
+  "icons": {
+    "128": "icon128.png"
+  }
+}
+

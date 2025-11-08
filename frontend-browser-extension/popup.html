@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SmartDesk AI</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <div id="header">
+    <span>⚛️ SmartDesk AI</span>
+    <div id="header-buttons">
+      <button id="settings-btn">⚙️</button>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div id="main">
+    <div id="btns">
+      <button id="summarize">Summarize Page</button>
+      <button id="clear">Clear</button>
+    </div>
+
+    <div id="summary">Summary will appear here...</div>
+    <div id="chat"></div>
+  </div>
+
+  <!-- INPUT AREA -->
+  <div id="input">
+    <input id="msg" placeholder="Ask something about this page..." />
+    <button id="send">▶</button>
+  </div>
+
+  <!-- FOOTER (IP hidden, message only) -->
+  <div id="footer">SmartDesk AI Connected ✅</div>
+
+  <!-- SETTINGS MODAL -->
+  <div id="settings-modal" class="modal">
+    <div class="modal-content">
+      <h3>🔗 API Configuration</h3>
+      <input type="text" id="api-input"
+        placeholder="Enter backend API URL (e.g., http://127.0.0.1:8000)" />
+      <button id="save-api">Save</button>
+      <button id="close-modal">Cancel</button>
+    </div>
+  </div>
+
+<script src="popup.js"></script>
+</body>
+</html>

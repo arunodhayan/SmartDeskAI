@@ -1,0 +1,20 @@
+timm
+fastapi
+uvicorn
+pydantic
+python-dotenv
+requests
+openai
+accelerate
+transformers
+python-docx
+somepackage
+python-pptx
+pdf2image
+PyMuPDF
+python-multipart
+requests 
+beautifulsoup4 
+requests-html
+playwright
+"lxml[html_clean]" lxml_html_clean
