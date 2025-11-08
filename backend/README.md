@@ -222,11 +222,7 @@ Response:
 **Arunodhayan Sampathkumar, M.Sc.**  
 Ph.D. Candidate — Medical Informatics  
 Chemnitz University of Technology  
-<<<<<<< HEAD
 📧 [LinkedIn](https://www.linkedin.com/in/arunodhayan-sampath-kumar/)
-=======
-📧 [LinkedIn]([https://www.linkedin.com/in/arunodhayan-sampathkumar](https://www.linkedin.com/in/arunodhayan-sampath-kumar/))
->>>>>>> 422c6f4 (frontend)
 
 ---
 
