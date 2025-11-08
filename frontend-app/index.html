@@ -1,162 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>SmartDesk AI</title>
-  <style>
-    :root {
-      --bg: #121212;
-      --panel: #1f1f1f;
-      --accent: #4c8bf5;
-      --text: #eaeaea;
-      --border: #2d2d2d;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-
-    #titlebar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 12px;
-      background: var(--panel);
-      border-bottom: 1px solid var(--border);
-    }
-
-    #window-controls button {
-      background: transparent;
-      color: var(--text);
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      margin-left: 8px;
-    }
-    #window-controls button:hover { color: var(--accent); }
-
-    #controls {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px;
-      background: var(--panel);
-      border-bottom: 1px solid var(--border);
-    }
-
-    button {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 6px 14px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    button:hover { background: #3a76d6; }
-
-    #summary, #chat {
-      flex: 1;
-      background: #181818;
-      margin: 10px;
-      padding: 10px;
-      border-radius: 8px;
-      overflow-y: auto;
-      border: 1px solid var(--border);
-    }
-
-    #chat b { color: var(--accent); }
-
-    #input {
-      display: flex;
-      padding: 10px;
-      background: var(--panel);
-      border-top: 1px solid var(--border);
-    }
-    #msg {
-      flex: 1;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 8px;
-      background: #101010;
-      color: var(--text);
-    }
-
-    /* --- Settings Modal --- */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-    .modal-content {
-      background: var(--panel);
-      color: var(--text);
-      padding: 20px;
-      border-radius: 8px;
-      width: 320px;
-    }
-    .modal-content input {
-      width: 100%;
-      padding: 8px;
-      margin: 8px 0;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      background: #101010;
-      color: var(--text);
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>SmartDesk AI</title>
+<style>
+:root {
+  --header1:#2b4d73;--header2:#253a5b;--blue:#4c8bf5;--bg:#f7f9fb;
+  --text:#1f2937;--sub:#6b7280;--white:#fff;--border:#e5e7eb;
+}
+html,body{margin:0;height:100%;font-family:"Segoe UI",sans-serif;
+  background:var(--bg);color:var(--text);display:flex;flex-direction:column;}
+#header{background:linear-gradient(90deg,var(--header1),var(--header2));
+  color:#fff;padding:14px 18px;display:flex;justify-content:space-between;
+  align-items:center;font-size:16px;font-weight:600;-webkit-app-region:drag;}
+.win-btn{background:transparent;border:none;color:#fff;font-size:18px;
+  cursor:pointer;line-height:1;-webkit-app-region:no-drag;transition:opacity .2s;}
+.win-btn:hover{opacity:.8;}
+#main{flex:1;display:flex;flex-direction:column;padding:20px;gap:14px;overflow:hidden;}
+#btns{text-align:center;}
+button{background:var(--blue);color:#fff;border:none;padding:8px 16px;margin:6px;
+  border-radius:8px;cursor:pointer;font-weight:500;box-shadow:0 2px 4px rgba(0,0,0,.1);
+  transition:background .2s;}
+button:hover{background:#3a76d6;}
+#summary,#chat{background:var(--white);border-radius:12px;padding:18px;
+  overflow-y:auto;box-shadow:0 2px 6px rgba(0,0,0,.08);border:1px solid var(--border);}
+#summary{flex:1.2;}#chat{flex:1;}#chat b{color:var(--blue);}
+#input{display:flex;padding:10px 20px 20px;gap:8px;}
+#msg{flex:1;border:1px solid var(--border);border-radius:8px;padding:10px;
+  font-size:14px;outline:none;background:var(--white);}
+#send{background:var(--blue);color:#fff;border-radius:8px;border:none;
+  padding:0 18px;cursor:pointer;font-size:14px;transition:background .2s;}
+#send:hover{background:#3a76d6;}
+.modal{display:none;position:fixed;z-index:999;left:0;top:0;width:100%;height:100%;
+  background:rgba(0,0,0,.6);justify-content:center;align-items:center;}
+.modal-content{background:#fff;color:#111;padding:20px;border-radius:10px;width:400px;
+  box-shadow:0 4px 12px rgba(0,0,0,.2);}
+.modal-content h3{margin-top:0;color:var(--header1);}
+.modal-content input{width:100%;margin:10px 0 15px;padding:10px;border-radius:6px;border:1px solid #ccc;}
+.modal-content button{background:var(--blue);color:#fff;border:none;padding:8px 14px;
+  border-radius:6px;margin-right:6px;cursor:pointer;}
+.modal-content button:hover{background:#3a76d6;}
+#summary::-webkit-scrollbar,#chat::-webkit-scrollbar{width:8px;}
+#summary::-webkit-scrollbar-thumb,#chat::-webkit-scrollbar-thumb{background:#cfd6df;border-radius:4px;}
+</style>
 </head>
 <body>
-  <!-- ===== Title Bar ===== -->
-  <div id="titlebar">
-    <div>⚛️ SmartDesk AI</div>
-    <div id="window-controls">
-      <button id="min-btn">—</button>
-      <button id="max-btn">☐</button>
-      <button id="close-btn">✕</button>
-    </div>
+<div id="header">
+  <span>⚛️ SmartDesk AI</span>
+  <div id="window-controls">
+    <button class="win-btn" id="settings-btn">⚙️</button>
+    <button class="win-btn" id="minimize-btn">–</button>
+    <button class="win-btn" id="maximize-btn">▢</button>
+    <button class="win-btn" id="close-btn">✕</button>
   </div>
+</div>
 
-  <!-- ===== File + Settings Controls ===== -->
-  <div id="controls">
-    <button id="open">📂 Open Document</button>
-    <button id="summarize">🧠 Summarize</button>
-    <button id="settings-btn">⚙️ Settings</button>
+<div id="main">
+  <div id="btns">
+    <button id="open">Choose Document</button>
+    <button id="summarize">Summarize</button>
   </div>
-
-  <!-- ===== Summary & Chat Areas ===== -->
   <div id="summary">Summary will appear here…</div>
   <div id="chat"></div>
+</div>
 
-  <!-- ===== Input Area ===== -->
-  <div id="input">
-    <input id="msg" placeholder="Ask something about this document…" />
-    <button id="send">▶</button>
+<div id="input">
+  <input id="msg" placeholder="Ask something about the document…" />
+  <button id="send">▶</button>
+</div>
+
+<!-- Removed “Connected to:” footer -->
+
+<div id="settings-modal" class="modal">
+  <div class="modal-content">
+    <h3>🔗 API Configuration</h3>
+    <input type="text" id="api-input" placeholder="Enter backend API URL (e.g. http://127.0.0.1:8000)" />
+    <button id="save-api">Save</button>
+    <button id="close-modal">Cancel</button>
   </div>
+</div>
 
-  <!-- ===== Settings Modal ===== -->
-  <div id="settings-modal" class="modal">
-    <div class="modal-content">
-      <h3>🔗 API Configuration</h3>
-      <input id="api-input" type="text" placeholder="Enter API URL (e.g. http://127.0.0.1:8000)" />
-      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:10px;">
-        <button id="save-api">Save</button>
-        <button id="cancel-api">Cancel</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="renderer.js"></script>
+<script src="renderer.js"></script>
 </body>
 </html>
 
