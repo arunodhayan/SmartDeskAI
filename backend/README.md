@@ -11,10 +11,6 @@ It supports both **offline Hugging Face models** (e.g. Gemma, Paligemma) and **o
 - 🌐 Fetches and cleans **web articles** (Nature, PLOS, MDPI, etc.)  
 - 🧾 Summarizes text using **Gemma (offline)** or **GPT-4o-mini (online)**  
 - 💬 Chat endpoint with **token streaming** support  
-<<<<<<< HEAD
-=======
-- 🖼️ Image captioning using **Paligemma** or fallback **ViT-GPT2**  
->>>>>>> 422c6f4 (frontend)
 - ⚙️ Easily toggle offline / online inference with environment variables  
 
 ---
