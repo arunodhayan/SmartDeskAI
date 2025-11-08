@@ -9,7 +9,7 @@ It is available as both a **desktop application (macOS/Linux)** and a **browser 
 ---
 
 ## 🚀 Key Features
-
+✅ **backend-readme** - https://github.com/arunodhayan/SmartDeskAI/blob/main/backend/README.md
 ✅ **Smart Summarization** — Extract abstracts, key findings, and methods from PDFs or webpages  
 ✅ **Interactive Q&A** — Ask questions about methods, datasets, or results  
 ✅ **Local + Cloud AI** — Works offline (Gemma-3n) or online (GPT-4o-mini)  
